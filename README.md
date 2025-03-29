@@ -10,6 +10,7 @@ Customer-Service is a customer management project developed with Spring Boot and
 >- **Java 17** or a higher version.
 >- **MySQL** with an active database.
 >- **Spring Boot** (version 3.4.4).
+>- **Postman**
 >- The `Schema-MySql.sql` file located in `src/main/resources` contains the necessary operations to create the schema and the table in the database.
 
 ## :gear: Database Configuration
@@ -55,6 +56,54 @@ Customer-Service is a customer management project developed with Spring Boot and
 **Eureka Service Discovery** will run at the URL `http://localhost:PORT`, where `PORT` is the value you configured earlier in the `application.properties` file.
 
 **Customer Service** will be found in the Eureka dashboard under the **“Instances currently registered with Eureka”** section or by accessing it directly at `http://localhost:PORT`, where `PORT` is the value configured in the `application.properties` file.
+
+## :clipboard: Testing with Postman
+
+To verify that the microservice is working properly, you can use **Postman** to test the various endpoints exposed by the service. First, access your **Customer Service** URL from the Eureka dashboard or directly via `http://localhost:PORT`.
+
+Once you have the URL, you can proceed to test the following endpoints:
+
+### POST Method
+
+- **POST** `/addcustomer`  
+  This endpoint allows you to add a new customer to the database.  
+  In **Postman**, select the `POST` method and in the body, provide a JSON object with the customer information. Example of the body:
+
+  ```json
+  {
+    "firstName": "John",
+    "lastName": "Doe",
+    "location": "anywhere"
+  }
+  ```
+  
+  ![Addcustomer](docs\addcustomer.png)
+
+### GET Methods
+- **GET** `/deletecustomer/{id}`
+  This endpoint allows you to delete a customer by their ID. Replace `{id}` with the actual ID of the customer you want to delete.
+
+    **Example:**  
+  `http://localhost:9092/deletecustomer/1` (where `1` is the customer ID).
+
+  ![Deletecustomer](docs\deletecustomer.png)
+
+- **GET** `/findcustomer/{id}`
+  This endpoint retrieves a customer’s details by their ID. Replace `{id}` with the ID of the customer you wish to find
+
+    **Example:**  
+  `http://localhost:9092/findcustomer/1` (where `1` is the customer ID).
+
+  ![Findbyid](docs\findbyid.png)
+
+- **GET** `/allcustomers`
+  This endpoint retrieves all customers from the database in JSON format.  
+    **Example:**  
+  `http://localhost:9092/allcustomers`
+
+  ![Allcustomers](docs\allcustomers.png)
+
+After executing these requests in Postman, you should see the appropriate responses based on the action taken (adding, deleting, finding, or listing customers).
 
 ## :handshake: Contributors
 

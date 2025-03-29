@@ -6,12 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import edu.uptc.swii.customerservice.model.Customer;
 import edu.uptc.swii.customerservice.service.CustomerService;
 
+@CrossOrigin(origins = "${FRONTEND_URL}")
 @RestController
 public class CustomerController {
 

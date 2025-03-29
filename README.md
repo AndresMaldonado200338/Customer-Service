@@ -105,6 +105,12 @@ Once you have the URL, you can proceed to test the following endpoints:
 
 After executing these requests in Postman, you should see the appropriate responses based on the action taken (adding, deleting, finding, or listing customers).
 
+## :heavy_check_mark: Running with Frontend Application
+
+1. **React-customer-service** is a frontend application made with React to run the microservices we have created. You can download the React customer service **[here](https://github.com/AndresMaldonado200338/react-customerservice-app)**
+2. In your `application.properties` file you will find a field with the value `FRONTEND_URL=http://localhost:3000`, which represents the URL of your frontend service, which is the one that React runs by default. If your frontend has another URL, you must change it here so that you can run the microservices (given the incompatibilities with CORS if you run locally).
+3. Configure your **React-customer-service** to be able to access microservices, following the instructions in its README.md
+
 ## :handshake: Contributors
 
 This project was created by:

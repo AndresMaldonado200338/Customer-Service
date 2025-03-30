@@ -50,8 +50,8 @@ Customer-Service is a customer management project developed with Spring Boot and
 
 1. Download the **Eureka Service Discovery** and this project, ensuring they are located in appropriate places.
 2. Open both projects in your preferred IDE.
-3. Run the main file of **Eureka** `EurekaApplication.java` located at `src/main/java/edu/uptc/swii/eureka`.
-4. Run the main file of **Customer Service** `CustomerserviceApplication.java` located at `src/main/java/edu/uptc/swii/customerservice`.
+3. Run first the main file of **Eureka** `EurekaApplication.java` located at `src/main/java/edu/uptc/swii/eureka`.
+4. Then run the main file of **Customer Service** `CustomerserviceApplication.java` located at `src/main/java/edu/uptc/swii/customerservice`.
 
 **Eureka Service Discovery** will run at the URL `http://localhost:PORT`, where `PORT` is the value you configured earlier in the `application.properties` file.
 
